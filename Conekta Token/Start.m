@@ -16,15 +16,22 @@
 @implementation Start
 
 - (void)viewDidLoad {
+    [self getConektaToken];
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) getConektaToken {
     Conekta *conekta = [[Conekta alloc] init];
     
     [conekta setDelegate: self];
     
-    [conekta setPublicKey:@"key_KJysdbf6PotS2ut2"];
+    [conekta setPublicKey:@"key_AzrZKrS9Y56ZC6WEqVm3iqA"];
     
     [conekta collectDevice];
     
-    Card *card = [conekta.Card initWithNumber: @"4242424242424242" name: @"Julian Ceballos" cvc: @"123" expMonth: @"10" expYear: @"2018"];
+    Card *card = [conekta.Card initWithNumber: @"4242424242424242" name: @"Julian Ceballos" cvc: @"123" expMonth: @"10" expYear: @"2016"];
     
     Token *token = [conekta.Token initWithCard:card];
     
@@ -33,9 +40,7 @@
     } andError: ^(NSError *error) {
         NSLog(@"%@", error);
     }];
-    
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning {

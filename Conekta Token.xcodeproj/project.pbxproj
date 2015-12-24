@@ -363,6 +363,7 @@
 				84776CDA1C0A031300100599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
